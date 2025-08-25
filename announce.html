@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/announce.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="user-info">
+            <div class="welcome-text"><b id="text1"></b>
+                <div class="demoimage">
+                    <img src="abc.png" id="car">
+                </div>
+            </div>
+            <i id="dropdownIcon" class="fas fa-caret-down dropdown-icon" onclick="toggleDropdown()"></i>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <div class="dropdown-content">
+                    <a href="settings.php">Settings</a>
+                    <a href="profile.php">Profile</a>
+                    <a href="welcome.php">Dashboard</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <hr>
+        <div class="sidebar open" id="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">BloodLink</div>
+        </div>
+        <ul class="nav-list">
+            <li class="active" id="active"> 
+                    <i class="fa-solid fa-gauge" ></i>
+                    <span class="links_name" >Dashboard</span>
+                </a>
+                <span class="tooltip" >Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-hand-holding-medical"></i>
+                    <span class="links_name">Donate Blood</span>
+                </a>
+                <span class="tooltip">Donate Blood</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span class="links_name">Donation History</span>
+                </a>
+                <span class="tooltip">Donation History</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-code-pull-request"></i>
+                    <span class="links_name">Initiate Blood Request</span>
+                </a>
+                <span class="tooltip">Blood Request</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-hand"></i>
+                    <span class="links_name">Request History</span>
+                </a>
+                <span class="tooltip">Request History</span>
+            </li>
+            <li>
+                <a href="#" style="background:white">
+                    
+                    <i class="fa-solid fa-tents" style="color:black"></i>
+                    <span class="links_name" style="color:black">Announcements</span>
+                </a>
+                <span class="tooltip">Announcements</span>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="camp-card">
+            <div class="camp-info">
+                <h2>Upcoming Camps</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam odit magni eaque consequuntur culpa, molestias accusamus dicta laudantium similique facilis asperiores omnis iste labore odio veritatis. Cumque praesentium ducimus culpa.</p>
+              <br>  <ul style="margin-left:25px">
+                    <li><strong>Date:</strong> [Date]</li>
+                    <li><strong>Organizer:</strong> [Organizer]</li>
+                    <li><strong>Venue:</strong> [Venue]</li>
+                </ul>
+
+                <p>Join us at our upcoming blood donation camp to make a difference in your community!</p>
+                <a href="#registration" class="btn" style="margin-top: 20px;">Participate</a>
+                
+                <div class="product-reviews">
+                    <h2>Post Your Review</h2>
+                    <div class="star-rating" data-rating="0">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <textarea rows="8" cols="40" style="width: 500px; height: 250px; resize: none;border-radius: 12px;padding:8px;border:4px solid black;" placeholder="message" required></textarea>
+
+                    <button class="post">Post</button>
+               
+                </div>
+                
+                
+               
+            </div>
+            <img src="./images/mainbg.jpg" alt="Upcoming Camp Image" class="camp-image">
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', event => {
+        console.log('Star clicked!');
+        const rating = parseInt(event.target.getAttribute('data-value'));
+        const starRating = event.target.parentElement;
+        starRating.setAttribute('data-rating', rating);
+        
+        starRating.querySelectorAll('.star').forEach(s => {
+            s.classList.remove('selected');
+            if (parseInt(s.getAttribute('data-value')) <= rating) {
+                s.classList.add('selected');
+            }
+        });
+    });
+});
+        </script>
+
+</body>
+</html>
